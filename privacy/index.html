@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보 처리방침 · Lettercast</title>
+<meta name="description" content="뉴스레터를 읽고, 듣고, 요약하기">
+<link rel="canonical" href="https://dhhyuk.github.io/Lettercast-site/privacy/">
+<style>
+:root { color-scheme: light dark; --bg:#F5F0E6; --surface:#FBF8F2; --text:#1F1B16; --muted:#544C43; --line:#E2D9CA; --accent:#A9441D; }
+@media (prefers-color-scheme: dark) { :root { --bg:#1C1A17; --surface:#262320; --text:#EEE7DB; --muted:#B0A89C; --line:#3A352F; --accent:#E9926A; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:17px/1.65 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+main, header, footer { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+header { display:flex; align-items:center; justify-content:space-between; padding-top:20px; padding-bottom:12px; border-bottom:1px solid var(--line); }
+header a.brand { font: 600 22px/1 "Noto Serif KR", Georgia, serif; color:var(--text); text-decoration:none; }
+nav a { color:var(--muted); margin-left:14px; font-size:15px; text-decoration:none; }
+nav a:hover, nav a[aria-current] { color:var(--text); text-decoration:underline; }
+h1 { font: 600 34px/1.25 "Noto Serif KR", Georgia, serif; margin: 40px 0 8px; }
+h2 { font-size: 20px; margin: 32px 0 8px; }
+p, li { color: var(--text); }
+.muted { color: var(--muted); }
+.card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin:14px 0; }
+.card h2 { margin-top: 0; }
+a { color: var(--text); }
+pre { white-space: pre-wrap; font-size: 13px; color: var(--muted); }
+footer { padding-top: 24px; padding-bottom: 40px; color: var(--muted); font-size: 14px; border-top:1px solid var(--line); margin-top:48px; }
+</style>
+</head>
+<body>
+<header><a class="brand" href="../">Lettercast</a><nav><a href="../privacy/" aria-current="page">개인정보 처리방침</a><a href="../terms/">이용약관</a><a href="../support/">지원</a><a href="../en/privacy/" lang="en">English</a></nav></header>
+<main>
+<h1>개인정보 처리방침</h1>
+<p>시행일: 2026년 11월 1일</p>
+<p>Lettercast(이하 "앱")는 Gmail로 받은 뉴스레터를 모아 읽고, 듣고, 요약해 보는 iOS 앱입니다. 앱은 <strong>자체 서버가 없으며</strong>, 메일 데이터를 개발자나 제3자에게 전송하거나 저장하지 않습니다. 모든 처리는 사용자의 기기 안에서 이루어집니다.</p>
+<h2>앱이 접근하는 정보</h2>
+<ul>
+<li><strong>Google 계정 기본 정보</strong>: 로그인한 계정의 이메일 주소와 이름. 설정 화면에 연결된 계정을 보여 주는 데만 씁니다.</li>
+<li><strong>Gmail 메일 (gmail.readonly 권한)</strong>: 받은 메일의 헤더(보낸 사람, 제목, 수신 거부 정보 등)로 뉴스레터인지 판단하고, 사용자가 확인한 발행처의 뉴스레터 본문만 내려받아 보여 줍니다.</li>
+<li><strong>Gmail 라벨 변경 (gmail.modify 권한, 선택)</strong>: 설정에서 "Gmail 라벨 정리"를 켠 경우에만 요청합니다. 뉴스레터에 라벨을 붙이고 받은편지함에서 보관하는 데만 쓰며, 메일을 삭제하거나 보내지 않습니다.</li>
+</ul>
+<h2>정보를 쓰는 방법</h2>
+<ul>
+<li>뉴스레터를 찾아 날짜·발행처별로 보여 주기</li>
+<li>읽기 모드로 본문 정리하기, 기기 안 음성 합성으로 읽어 주기</li>
+<li>기기 안 AI 모델(Apple Foundation Models)로 요약 만들기</li>
+<li>하이라이트·메모·스크랩을 기기에 저장하기</li>
+</ul>
+<p>광고, 분석, 추적, AI 모델 학습에는 쓰지 않습니다.</p>
+<h2>저장 위치와 보관 기간</h2>
+<ul>
+<li>뉴스레터 정보, 본문 캐시, 요약, 하이라이트·메모는 <strong>사용자의 기기 안에만</strong> 저장되며 iCloud 백업에서도 제외됩니다.</li>
+<li>뉴스레터가 아닌 메일은 판단에만 쓰고 내용을 저장하지 않습니다. 다시 판단하지 않도록 보낸 사람 주소를 되돌릴 수 없게 변환한 값(해시)만 남깁니다.</li>
+<li>로그인 토큰은 Google 로그인 SDK가 기기의 키체인에 보관합니다.</li>
+<li>로그아웃하면 기기에 저장된 모든 데이터가 삭제됩니다. "연결 해제 및 모든 데이터 삭제"를 누르면 Google 계정에 준 권한도 해제됩니다. 앱을 삭제해도 모든 데이터가 지워집니다.</li>
+</ul>
+<h2>기기 밖으로 나가는 통신</h2>
+<ul>
+<li><strong>Google</strong>: 로그인과 Gmail API 호출. 메일 데이터는 원래 보관자인 Google과만 주고받습니다.</li>
+<li><strong>발행처의 서버</strong>: 메일 속 이미지와 발행처 아이콘을 불러올 때. 설정에서 원격 이미지를 끌 수 있고, 메일 열람을 알리는 추적 픽셀은 기본으로 차단합니다.</li>
+<li><strong>구독 취소</strong>: 사용자가 구독 취소를 확인한 경우에만 메일에 적힌 발행처의 수신 거부 주소로 요청합니다.</li>
+</ul>
+<p>이 밖에 개발자 서버나 분석·광고 서비스로 보내는 데이터는 없습니다.</p>
+<h2>Google API 서비스 사용자 데이터 정책 준수</h2>
+<p>Lettercast가 Google API에서 받은 정보를 사용하고 다른 앱으로 전송하는 방식은 제한적 사용(Limited Use) 요구사항을 포함한 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>을 따릅니다.</p>
+<ul>
+<li>Gmail 데이터는 사용자가 보는 뉴스레터 읽기·듣기·요약 기능을 제공하는 데만 씁니다.</li>
+<li>Gmail 데이터를 사람에게 보여 주거나 전송하지 않습니다. 개발자도 사용자의 메일을 볼 수 없습니다.</li>
+<li>Gmail 데이터를 광고, 재판매, 신용 평가, 범용 AI·머신러닝 모델 학습에 쓰지 않습니다.</li>
+</ul>
+<h2>Google 로그인</h2>
+<p>로그인은 Google 로그인 SDK로 이루어지며, 이 과정에서 Google이 처리하는 정보에는 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>이 적용됩니다.</p>
+<h2>아동</h2>
+<p>앱은 만 13세 미만 아동을 대상으로 하지 않습니다.</p>
+<h2>변경</h2>
+<p>이 방침이 바뀌면 앱과 이 페이지에 알립니다.</p>
+<h2>문의</h2>
+<ul>
+<li>이메일: sss989870@gmail.com</li>
+<li>웹사이트: https://dhhyuk.github.io/Lettercast-site</li>
+</ul>
+</main>
+<footer>© 2026 Lettercast · <a href="../privacy/">개인정보 처리방침</a> · <a href="../terms/">이용약관</a> · <a href="../support/">지원</a></footer>
+</body>
+</html>

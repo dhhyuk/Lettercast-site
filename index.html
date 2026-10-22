@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lettercast</title>
+<meta name="description" content="뉴스레터를 읽고, 듣고, 요약하기">
+<link rel="canonical" href="https://dhhyuk.github.io/Lettercast-site/">
+<style>
+:root { color-scheme: light dark; --bg:#F5F0E6; --surface:#FBF8F2; --text:#1F1B16; --muted:#544C43; --line:#E2D9CA; --accent:#A9441D; }
+@media (prefers-color-scheme: dark) { :root { --bg:#1C1A17; --surface:#262320; --text:#EEE7DB; --muted:#B0A89C; --line:#3A352F; --accent:#E9926A; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:17px/1.65 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+main, header, footer { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+header { display:flex; align-items:center; justify-content:space-between; padding-top:20px; padding-bottom:12px; border-bottom:1px solid var(--line); }
+header a.brand { font: 600 22px/1 "Noto Serif KR", Georgia, serif; color:var(--text); text-decoration:none; }
+nav a { color:var(--muted); margin-left:14px; font-size:15px; text-decoration:none; }
+nav a:hover, nav a[aria-current] { color:var(--text); text-decoration:underline; }
+h1 { font: 600 34px/1.25 "Noto Serif KR", Georgia, serif; margin: 40px 0 8px; }
+h2 { font-size: 20px; margin: 32px 0 8px; }
+p, li { color: var(--text); }
+.muted { color: var(--muted); }
+.card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin:14px 0; }
+.card h2 { margin-top: 0; }
+a { color: var(--text); }
+pre { white-space: pre-wrap; font-size: 13px; color: var(--muted); }
+footer { padding-top: 24px; padding-bottom: 40px; color: var(--muted); font-size: 14px; border-top:1px solid var(--line); margin-top:48px; }
+</style>
+</head>
+<body>
+<header><a class="brand" href="">Lettercast</a><nav><a href="privacy/">개인정보 처리방침</a><a href="terms/">이용약관</a><a href="support/">지원</a><a href="en/" lang="en">English</a></nav></header>
+<main>
+<h1>Lettercast</h1>
+<p class="muted">뉴스레터를 읽고, 듣고, 요약하기</p>
+<p>Lettercast는 Gmail로 받는 뉴스레터를 모아 신문처럼 읽고, 라디오처럼 듣고, 요약으로 훑어보는 iPhone 앱이에요.</p>
+<div class="card"><h2>오늘의 판</h2><p>오늘 도착한 뉴스레터와 읽는 시간, 듣는 시간을 한눈에. 구독 중인 뉴스레터는 처음 연결할 때 찾아 드리고, 체크한 곳만 모아요.</p></div><div class="card"><h2>듣기</h2><p>재생 버튼 하나로 오늘 뉴스레터를 차례로. 화면을 꺼도 이어서 재생돼요.</p></div><div class="card"><h2>요약</h2><p>한 줄 요약과 핵심 포인트, 오늘의 브리핑. Apple Intelligence로 기기 안에서 만들어요.</p></div><div class="card"><h2>편하게 읽기</h2><p>원본 또는 읽기 모드, 하이라이트와 메모, 추적 픽셀 차단, 앱 안에서 구독 취소.</p></div>
+<h2>메일은 기기 밖으로 나가지 않아요</h2>
+<p>Lettercast에는 서버가 없어요. 메일은 Google에서 사용자의 iPhone으로만 내려오고, 저장·요약·음성 변환이 모두 기기 안에서 이루어져요. 개발자도 메일을 볼 수 없어요. 광고와 추적도 없어요.</p>
+<p>Lettercast가 Google API에서 받은 정보를 사용하고 다른 앱으로 전송하는 방식은 제한적 사용(Limited Use) 요구사항을 포함한 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>을 따릅니다.</p>
+<p class="muted">iOS 18 이상 iPhone, Gmail 계정이 필요해요. 요약은 Apple Intelligence를 지원하는 iPhone(iOS 26 이상)에서 사용할 수 있어요. Gmail은 Google LLC의 상표이며, Lettercast는 Google과 제휴 관계가 아닙니다.</p>
+<p><a href="privacy/">개인정보 처리방침</a> · <a href="terms/">이용약관</a> · <a href="support/">지원</a></p>
+</main>
+<footer>© 2026 Lettercast · <a href="privacy/">개인정보 처리방침</a> · <a href="terms/">이용약관</a> · <a href="support/">지원</a></footer>
+</body>
+</html>

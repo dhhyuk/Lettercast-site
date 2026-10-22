@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy · Lettercast</title>
+<meta name="description" content="Read, listen to, and summarize your newsletters">
+<link rel="canonical" href="https://dhhyuk.github.io/Lettercast-site/en/privacy/">
+<style>
+:root { color-scheme: light dark; --bg:#F5F0E6; --surface:#FBF8F2; --text:#1F1B16; --muted:#544C43; --line:#E2D9CA; --accent:#A9441D; }
+@media (prefers-color-scheme: dark) { :root { --bg:#1C1A17; --surface:#262320; --text:#EEE7DB; --muted:#B0A89C; --line:#3A352F; --accent:#E9926A; } }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--text); font:17px/1.65 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
+main, header, footer { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+header { display:flex; align-items:center; justify-content:space-between; padding-top:20px; padding-bottom:12px; border-bottom:1px solid var(--line); }
+header a.brand { font: 600 22px/1 "Noto Serif KR", Georgia, serif; color:var(--text); text-decoration:none; }
+nav a { color:var(--muted); margin-left:14px; font-size:15px; text-decoration:none; }
+nav a:hover, nav a[aria-current] { color:var(--text); text-decoration:underline; }
+h1 { font: 600 34px/1.25 "Noto Serif KR", Georgia, serif; margin: 40px 0 8px; }
+h2 { font-size: 20px; margin: 32px 0 8px; }
+p, li { color: var(--text); }
+.muted { color: var(--muted); }
+.card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin:14px 0; }
+.card h2 { margin-top: 0; }
+a { color: var(--text); }
+pre { white-space: pre-wrap; font-size: 13px; color: var(--muted); }
+footer { padding-top: 24px; padding-bottom: 40px; color: var(--muted); font-size: 14px; border-top:1px solid var(--line); margin-top:48px; }
+</style>
+</head>
+<body>
+<header><a class="brand" href="../../en/">Lettercast</a><nav><a href="../../en/privacy/" aria-current="page">Privacy Policy</a><a href="../../en/terms/">Terms of Use</a><a href="../../en/support/">Support</a><a href="../../privacy/" lang="ko">한국어</a></nav></header>
+<main>
+<h1>Privacy Policy</h1>
+<p>Effective: November 1, 2026</p>
+<p>Lettercast ("the app") is an iOS app for reading, listening to, and summarizing the newsletters you receive in Gmail. The app <strong>has no servers of its own</strong> and never sends or stores your mail data with the developer or any third party. All processing happens on your device.</p>
+<h2>Information the app accesses</h2>
+<ul>
+<li><strong>Basic Google account info</strong>: the email address and name of the signed-in account, used only to show the connected account in Settings.</li>
+<li><strong>Gmail messages (gmail.readonly)</strong>: message headers (sender, subject, unsubscribe info, etc.) are used to recognize newsletters, and bodies are downloaded only for newsletters from publishers you confirmed.</li>
+<li><strong>Gmail label changes (gmail.modify, optional)</strong>: requested only if you turn on "Organize Gmail labels" in Settings. Used only to label newsletters and archive them from the inbox. The app never deletes or sends mail.</li>
+</ul>
+<h2>How the information is used</h2>
+<ul>
+<li>Finding newsletters and showing them by date and publisher</li>
+<li>Cleaning up bodies in reader mode and reading them aloud with on-device speech synthesis</li>
+<li>Creating summaries with the on-device AI model (Apple Foundation Models)</li>
+<li>Saving highlights, notes, and saved items on your device</li>
+</ul>
+<p>It is never used for advertising, analytics, tracking, or training AI models.</p>
+<h2>Storage and retention</h2>
+<ul>
+<li>Newsletter info, body cache, summaries, highlights, and notes are stored <strong>only on your device</strong> and are excluded from iCloud backup.</li>
+<li>Mail that isn't a newsletter is used only for detection; its content is not stored. Only an irreversible hash of the sender address is kept so it isn't checked again.</li>
+<li>Sign-in tokens are kept in the device keychain by the Google Sign-In SDK.</li>
+<li>Signing out deletes all data stored on the device. "Disconnect and delete all data" also revokes the access you granted to your Google account. Deleting the app removes all data as well.</li>
+</ul>
+<h2>Network connections</h2>
+<ul>
+<li><strong>Google</strong>: sign-in and Gmail API calls. Mail data is exchanged only with Google, which already holds it.</li>
+<li><strong>Publishers' servers</strong>: when loading images inside a newsletter and publisher icons. You can turn off remote images in Settings, and tracking pixels that report opens are blocked by default.</li>
+<li><strong>Unsubscribe</strong>: only when you confirm, a request is sent to the unsubscribe address listed in the newsletter.</li>
+</ul>
+<p>No other data is sent to developer servers or analytics or advertising services.</p>
+<h2>Google API Services User Data Policy</h2>
+<p>Lettercast's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<ul>
+<li>Gmail data is used only to provide the user-facing features of reading, listening to, and summarizing newsletters.</li>
+<li>No human reads your Gmail data and it is not transferred anywhere. The developer cannot see your mail.</li>
+<li>Gmail data is not used for advertising, resale, credit evaluation, or training generalized AI/ML models.</li>
+</ul>
+<h2>Google Sign-In</h2>
+<p>Sign-in uses the Google Sign-In SDK. Information Google processes during sign-in is governed by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
+<h2>Children</h2>
+<p>The app is not directed to children under 13.</p>
+<h2>Changes</h2>
+<p>If this policy changes, we will let you know in the app and on this page.</p>
+<h2>Contact</h2>
+<ul>
+<li>Email: sss989870@gmail.com</li>
+<li>Website: https://dhhyuk.github.io/Lettercast-site</li>
+</ul>
+</main>
+<footer>© 2026 Lettercast · <a href="../../en/privacy/">Privacy Policy</a> · <a href="../../en/terms/">Terms of Use</a> · <a href="../../en/support/">Support</a></footer>
+</body>
+</html>
