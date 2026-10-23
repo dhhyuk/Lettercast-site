@@ -3,43 +3,250 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lettercast</title>
-<meta name="description" content="Read, listen to, and summarize your newsletters">
+<title>Lettercast — Read, listen to, and summarize your newsletters</title>
+<meta name="description" content="Lettercast gathers the newsletters you get in Gmail into one daily edition — read them like a newspaper, listen like a radio show, skim them as summaries. Your mail never leaves your iPhone.">
+<meta property="og:title" content="Lettercast — Read, listen to, and summarize your newsletters">
+<meta property="og:description" content="Lettercast gathers the newsletters you get in Gmail into one daily edition — read them like a newspaper, listen like a radio show, skim them as summaries. Your mail never leaves your iPhone.">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#F5F0E6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1C1A17" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="../assets/icon-64.png">
+<link rel="apple-touch-icon" href="../assets/icon-256.png">
 <link rel="canonical" href="https://dhhyuk.github.io/Lettercast-site/en/">
+<link rel="alternate" hreflang="ko" href="https://dhhyuk.github.io/Lettercast-site/">
+<link rel="alternate" hreflang="en" href="https://dhhyuk.github.io/Lettercast-site/en/">
+<meta property="og:image" content="https://dhhyuk.github.io/Lettercast-site/assets/shot-1-today.jpg">
 <style>
-:root { color-scheme: light dark; --bg:#F5F0E6; --surface:#FBF8F2; --text:#1F1B16; --muted:#544C43; --line:#E2D9CA; --accent:#A9441D; }
-@media (prefers-color-scheme: dark) { :root { --bg:#1C1A17; --surface:#262320; --text:#EEE7DB; --muted:#B0A89C; --line:#3A352F; --accent:#E9926A; } }
+:root { color-scheme: light dark;
+  --bg:#F5F0E6; --bg2:#EDE5D6; --surface:#FBF8F2; --text:#1F1B16; --muted:#544C43; --line:#E2D9CA;
+  --accent:#A9441D; --accent-soft:#F3D9C8; --ink:#1F1B16; }
+@media (prefers-color-scheme: dark) { :root {
+  --bg:#1C1A17; --bg2:#23201C; --surface:#262320; --text:#EEE7DB; --muted:#B0A89C; --line:#3A352F;
+  --accent:#E9926A; --accent-soft:#5A3626; --ink:#0F0E0C; } }
 * { box-sizing: border-box; }
-body { margin:0; background:var(--bg); color:var(--text); font:17px/1.65 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif; }
-main, header, footer { max-width: 720px; margin: 0 auto; padding: 0 20px; }
-header { display:flex; align-items:center; justify-content:space-between; padding-top:20px; padding-bottom:12px; border-bottom:1px solid var(--line); }
-header a.brand { font: 600 22px/1 "Noto Serif KR", Georgia, serif; color:var(--text); text-decoration:none; }
-nav a { color:var(--muted); margin-left:14px; font-size:15px; text-decoration:none; }
-nav a:hover, nav a[aria-current] { color:var(--text); text-decoration:underline; }
-h1 { font: 600 34px/1.25 "Noto Serif KR", Georgia, serif; margin: 40px 0 8px; }
-h2 { font-size: 20px; margin: 32px 0 8px; }
-p, li { color: var(--text); }
-.muted { color: var(--muted); }
-.card { background:var(--surface); border:1px solid var(--line); border-radius:16px; padding:18px 20px; margin:14px 0; }
-.card h2 { margin-top: 0; }
-a { color: var(--text); }
-pre { white-space: pre-wrap; font-size: 13px; color: var(--muted); }
-footer { padding-top: 24px; padding-bottom: 40px; color: var(--muted); font-size: 14px; border-top:1px solid var(--line); margin-top:48px; }
+html { scroll-behavior: smooth; }
+body { margin:0; background:var(--bg); color:var(--text); -webkit-font-smoothing: antialiased;
+  font: 17px/1.7 -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", "Noto Sans KR", sans-serif; word-break: keep-all; }
+a { color: inherit; }
+.serif { font-family: "Noto Serif KR", "Nanum Myeongjo", "AppleMyungjo", "Times New Roman", Georgia, serif; }
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 24px; }
+
+/* 상단 바 */
+.topbar { position: sticky; top: 0; z-index: 10; backdrop-filter: saturate(1.6) blur(16px); -webkit-backdrop-filter: saturate(1.6) blur(16px);
+  background: color-mix(in srgb, var(--bg) 78%, transparent); border-bottom: 1px solid color-mix(in srgb, var(--line) 70%, transparent); }
+.topbar .wrap { display:flex; align-items:center; justify-content:space-between; height:64px; }
+.brand { display:flex; align-items:center; gap:10px; text-decoration:none; font-weight:700; font-size:19px; }
+.brand img { width:32px; height:32px; border-radius:8px; }
+.topbar nav { display:flex; align-items:center; gap:22px; font-size:15px; }
+.topbar nav a { color: var(--muted); text-decoration:none; }
+.topbar nav a:hover, .topbar nav a[aria-current] { color: var(--text); }
+.pill { border:1px solid var(--line); border-radius:999px; padding:5px 12px; }
+@media (max-width: 640px) { .topbar nav .hide-sm { display:none; } }
+
+/* 첫 화면 */
+.hero { position: relative; overflow: hidden; padding: 72px 0 40px; }
+.hero::before { content:""; position:absolute; inset:-30% -10% auto auto; width:720px; height:720px; border-radius:50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--accent) 22%, transparent), transparent 65%); pointer-events:none; }
+.hero .wrap { display:grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items:center; }
+@media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; text-align:center; } .hero .actions { justify-content:center; } }
+.eyebrow { display:inline-block; color: var(--accent); font-weight:700; font-size:14px; letter-spacing:.04em; margin-bottom:14px; }
+.hero h1 { font-size: clamp(38px, 6vw, 64px); line-height: 1.2; margin: 0 0 20px; font-weight: 700; letter-spacing:-0.01em; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p.lead { font-size: clamp(17px, 2vw, 20px); color: var(--muted); margin: 0 0 32px; max-width: 34em; }
+@media (max-width: 860px) { .hero p.lead { margin-left:auto; margin-right:auto; } }
+.actions { display:flex; gap:12px; flex-wrap: wrap; align-items:center; }
+.btn { display:inline-flex; align-items:center; gap:10px; padding: 14px 22px; border-radius: 14px; font-weight:700; text-decoration:none; font-size:16px; }
+.btn-ink { background: var(--text); color: var(--bg); }
+.btn-ghost { border:1px solid var(--line); background: var(--surface); }
+.btn-ghost:hover { border-color: var(--muted); }
+.note { color: var(--muted); font-size: 14px; margin-top: 14px; }
+
+/* 아이폰 목업 */
+.phone { position: relative; width: min(320px, 78vw); margin: 0 auto; aspect-ratio: 1320 / 2868; border-radius: 48px; padding: 10px;
+  background: #121110; box-shadow: 0 40px 80px -30px rgba(31,27,22,.45), 0 0 0 2px #3a352f inset; }
+.phone img { display:block; width:100%; height:100%; object-fit: cover; border-radius: 38px; }
+.phone.small { width: min(280px, 72vw); }
+.float { position:absolute; background: var(--surface); border:1px solid var(--line); border-radius: 16px; padding: 10px 14px;
+  box-shadow: 0 16px 40px -18px rgba(31,27,22,.35); font-size: 14px; line-height: 1.35; text-align:left; animation: bob 6s ease-in-out infinite; }
+.float strong { display:block; font-size: 16px; }
+.float .muted { color: var(--muted); }
+.float.f1 { left: -10px; top: 22%; }
+.float.f2 { right: -10px; top: 56%; animation-delay: -2s; }
+.float.f3 { left: 6px; bottom: 9%; animation-delay: -4s; color: var(--accent); font-weight: 700; }
+@keyframes bob { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
+
+/* 공통 섹션 */
+section { padding: 88px 0; }
+.center { text-align:center; }
+h2.big { font-size: clamp(28px, 4vw, 42px); line-height:1.3; margin: 0 0 16px; font-weight:700; letter-spacing:-0.01em; }
+p.sub { color: var(--muted); font-size: 18px; max-width: 40em; margin: 0 auto; }
+.card { background: var(--surface); border:1px solid var(--line); border-radius: 22px; padding: 26px; }
+
+/* 세 기둥 */
+.pillars { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 48px; text-align:left; }
+@media (max-width: 760px) { .pillars { grid-template-columns: 1fr; } }
+.pillars .icon { font-size: 30px; }
+.pillars h3 { margin: 10px 0 6px; font-size: 21px; }
+.pillars p { margin:0; color: var(--muted); }
+
+/* 기능 */
+.feature { display:grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items:center; padding: 56px 0; }
+.feature.flip .text { order: 2; }
+@media (max-width: 860px) { .feature { grid-template-columns: 1fr; gap: 32px; } .feature.flip .text { order: 0; } }
+.tag { display:inline-block; background: var(--accent-soft); color: var(--text); border-radius: 999px; padding: 4px 12px; font-size: 14px; font-weight:700; }
+.feature h3 { font-size: clamp(26px, 3.4vw, 36px); line-height:1.3; margin: 14px 0 12px; }
+.feature p { color: var(--muted); font-size: 18px; margin: 0 0 18px; }
+.feature ul { list-style:none; padding:0; margin:0; }
+.feature li { position:relative; padding-left: 28px; margin: 8px 0; }
+.feature li::before { content:""; position:absolute; left:4px; top:.62em; width:10px; height:10px; border-radius:3px; background: var(--accent); opacity:.85; }
+.shot-bg { position:relative; padding: 36px 0; border-radius: 32px; background: linear-gradient(160deg, var(--bg2), var(--surface)); border:1px solid var(--line); }
+
+/* 하루 */
+.day { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; text-align:left; }
+@media (max-width: 760px) { .day { grid-template-columns: 1fr; } }
+.day .time { font-size: 30px; font-weight: 700; color: var(--accent); font-variant-numeric: tabular-nums; }
+.day h3 { margin: 4px 0 8px; font-size: 19px; }
+.day p { margin:0; color: var(--muted); }
+
+/* 개인정보 (어두운 판, 라이트·다크 모두 같은 색) */
+.privacy { background: var(--ink); color: #EEE7DB; border-radius: 36px; padding: 72px clamp(24px, 6vw, 72px); }
+.privacy .eyebrow { color: #E9926A; }
+.privacy p.sub { color: #CFC6B8; margin: 0; }
+.privacy .grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 40px 0 32px; }
+@media (max-width: 760px) { .privacy .grid { grid-template-columns: 1fr; } }
+.privacy .item { border:1px solid #3A352F; border-radius: 20px; padding: 22px; background: #2A2622; }
+.privacy .item h3 { margin: 0 0 6px; font-size: 19px; color: #EEE7DB; }
+.privacy .item p { margin: 0; color: #B0A89C; }
+.privacy .legal { color: #B0A89C; font-size: 15px; }
+.privacy a { color: #EEE7DB; }
+
+/* 시작하기 */
+.steps { display:grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 44px; counter-reset: step; text-align:left; }
+@media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+.steps .card::before { counter-increment: step; content: counter(step); display:inline-grid; place-items:center; width:36px; height:36px;
+  border-radius: 50%; background: var(--text); color: var(--bg); font-weight:700; margin-bottom: 12px; }
+.steps h3 { margin: 0 0 6px; font-size: 19px; }
+.steps p { margin: 0; color: var(--muted); }
+
+.final { text-align:center; padding: 96px 0 72px; }
+.final img { width: 96px; height: 96px; border-radius: 22px; box-shadow: 0 18px 40px -16px rgba(31,27,22,.4); }
+.final h2 { margin-top: 24px; }
+.fine { color: var(--muted); font-size: 14px; max-width: 46em; margin: 18px auto 0; }
+
+/* 문서 페이지 */
+.doc { max-width: 760px; margin: 0 auto; padding: 56px 24px 24px; }
+.doc h1 { font-size: 36px; line-height: 1.3; margin: 0 0 8px; }
+.doc h2 { font-size: 21px; margin: 36px 0 8px; }
+.doc .card { margin: 14px 0; }
+.doc .card h2 { margin-top: 0; font-size: 19px; }
+
+footer { border-top: 1px solid var(--line); margin-top: 40px; padding: 28px 0 48px; color: var(--muted); font-size: 14px; }
+footer .wrap { display:flex; flex-wrap: wrap; gap: 8px 18px; justify-content: space-between; }
+footer a { color: var(--muted); }
+
+/* 스크롤 등장 (스크립트가 꺼져 있으면 그냥 보인다) */
+.js .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s ease, transform .8s ease; }
+.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { .js .reveal { opacity:1; transform:none; transition:none; } .float { animation: none; } html { scroll-behavior: auto; } }
 </style>
 </head>
 <body>
-<header><a class="brand" href="../en/">Lettercast</a><nav><a href="../en/privacy/">Privacy Policy</a><a href="../en/terms/">Terms of Use</a><a href="../en/support/">Support</a><a href="../" lang="ko">한국어</a></nav></header>
+<header class="topbar"><div class="wrap">
+<a class="brand" href="../en/"><img src="../assets/icon-64.png" alt="" width="32" height="32">Lettercast</a>
+<nav><a class="hide-sm" href="../en/#features">Features</a><a class="hide-sm" href="../en/#privacy">Privacy</a><a href="../en/support/">Support</a><a class="pill" href="../" lang="ko">한국어</a></nav>
+</div></header>
 <main>
-<h1>Lettercast</h1>
-<p class="muted">Read, listen to, and summarize your newsletters</p>
-<p>Lettercast gathers the newsletters you get in Gmail so you can read them like a newspaper, listen like a radio show, and skim them as summaries — on iPhone.</p>
-<div class="card"><h2>Today's edition</h2><p>Today's newsletters with reading and listening time at a glance. Lettercast finds your subscriptions when you connect, and only collects the ones you check.</p></div><div class="card"><h2>Listen</h2><p>One tap plays today's newsletters in order, even with the screen off.</p></div><div class="card"><h2>Summaries</h2><p>A one-line summary, key points, and Today's Briefing — made on device with Apple Intelligence.</p></div><div class="card"><h2>Comfortable reading</h2><p>Original or reader mode, highlights and notes, tracking-pixel blocking, and unsubscribe in the app.</p></div>
-<h2>Your mail never leaves your device</h2>
-<p>Lettercast has no servers. Mail comes from Google straight to your iPhone, and storage, summaries, and speech all happen on device. Not even the developer can see your mail. No ads, no tracking.</p>
-<p>Lettercast's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
-<p class="muted">Requires an iPhone with iOS 18 or later and a Gmail account. Summaries are available on iPhone models that support Apple Intelligence, with iOS 26 or later. Gmail is a trademark of Google LLC. Lettercast is not affiliated with Google.</p>
-<p><a href="privacy/">Privacy Policy</a> · <a href="terms/">Terms of Use</a> · <a href="support/">Support</a></p>
-</main>
-<footer>© 2026 Lettercast · <a href="../en/privacy/">Privacy Policy</a> · <a href="../en/terms/">Terms of Use</a> · <a href="../en/support/">Support</a></footer>
+<section class="hero"><div class="wrap">
+  <div class="reveal">
+    <span class="eyebrow">A newsletter reader for Gmail</span>
+    <h1 class="serif">Your newsletters,<br>as a <em>morning edition</em>.</h1>
+    <p class="lead">Lettercast gathers the newsletters scattered across your inbox into one daily edition. Listen on your commute like the radio, or skim the summaries when you're busy.</p>
+    <div class="actions">
+      <span class="btn btn-ink"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16.37 12.6c.02 2.5 2.2 3.33 2.22 3.34-.02.06-.35 1.19-1.15 2.36-.69 1.01-1.41 2.02-2.55 2.04-1.11.02-1.47-.66-2.75-.66-1.28 0-1.67.64-2.73.68-1.1.04-1.93-1.09-2.63-2.1-1.43-2.07-2.52-5.85-1.06-8.4.73-1.27 2.03-2.07 3.44-2.09 1.08-.02 2.1.73 2.75.73.66 0 1.89-.9 3.19-.77.54.02 2.07.22 3.05 1.66-.08.05-1.82 1.06-1.8 3.17M14.3 4.9c.58-.71.98-1.69.87-2.67-.84.03-1.86.56-2.46 1.27-.54.62-1.01 1.62-.89 2.58.94.07 1.9-.48 2.48-1.18"/></svg>Coming soon to the App Store</span>
+      <a class="btn btn-ghost" href="#features">See how it works ↓</a>
+    </div>
+    <p class="note">iPhone · iOS 18 or later · Free</p>
+  </div>
+  <div class="reveal" style="position:relative">
+    <div class="phone "><img src="../assets/shot-1-today.jpg" alt="Lettercast screen: 4 today" loading="lazy"></div>
+    <div class="float f1" aria-hidden="true"><strong>4 today</strong><span class="muted">Listen to all · 6 min</span></div>
+    <div class="float f2" aria-hidden="true">📱 Processed on device</div>
+    <div class="float f3" aria-hidden="true">▶ Now playing</div>
+  </div>
+</div></section>
+<section><div class="wrap center">
+  <h2 class="big serif reveal">You keep subscribing.<br>How many did you actually read?</h2>
+  <p class="sub reveal">Buried in the Promotions tab, saved for later, then marked all as read. Lettercast makes your newsletters worth opening again.</p>
+  <div class="pillars"><div class="card reveal"><div class="icon" aria-hidden="true">📰</div><h3>Gathered</h3><p>Only your subscriptions, in one edition per day</p></div><div class="card reveal"><div class="icon" aria-hidden="true">🎧</div><h3>Listened to</h3><p>Played in order, like the radio, when your hands are busy</p></div><div class="card reveal"><div class="icon" aria-hidden="true">✍️</div><h3>Summarized</h3><p>A one-line summary and key points when you're short on time</p></div></div>
+</div></section>
+<section id="features" style="padding-top:24px"><div class="wrap">
+  <h2 class="big serif center reveal">The easiest way to get through<br>a day of newsletters</h2>
+  
+  <div class="feature">
+    <div class="text reveal"><span class="tag">Today's edition</span><h3 class="serif">A fresh paper every morning</h3><p>See how many newsletters arrived today and how long they take to read or to listen to. Finish them all and the edition is done.</p><ul><li>Finds the newsletters you subscribe to when you connect</li><li>Collects only the publishers you check — personal mail is left alone</li><li>Read, save, or hide with a swipe</li></ul></div>
+    <div class="shot-bg reveal"><div class="phone small"><img src="../assets/shot-1-today.jpg" alt="Lettercast screen: Today&#x27;s edition" loading="lazy"></div></div>
+  </div>
+  <div class="feature flip">
+    <div class="text reveal"><span class="tag">Summaries</span><h3 class="serif">Start with the summary</h3><p>Open a newsletter and see a one-line summary and key points first, with to-dos and important links pulled out.</p><ul><li>Made on your iPhone with Apple Intelligence</li><li>Today's Briefing: every newsletter from today, summarized</li><li>Shows how much time the summary saved you</li></ul></div>
+    <div class="shot-bg reveal"><div class="phone small"><img src="../assets/shot-2-summary.jpg" alt="Lettercast screen: Summaries" loading="lazy"></div></div>
+  </div>
+  <div class="feature">
+    <div class="text reveal"><span class="tag">Listen</span><h3 class="serif">Your commute, like the radio</h3><p>One tap reads today's newsletters aloud, in order. It keeps going with the screen off or in other apps.</p><ul><li>Pause, skip 15 seconds, or jump to the next from the Lock Screen</li><li>0.75× to 2× speed, and pick up where you left off</li><li>In reader mode, follow the sentence being read</li></ul></div>
+    <div class="shot-bg reveal"><div class="phone small"><img src="../assets/shot-3-listen.jpg" alt="Lettercast screen: Listen" loading="lazy"></div></div>
+  </div>
+  <div class="feature flip">
+    <div class="text reveal"><span class="tag">Reader mode</span><h3 class="serif">Just the words</h3><p>Strip away cluttered email layouts and read the text in a clean font and comfortable spacing — or switch back to the original anytime.</p><ul><li>Adjust text size and line spacing</li><li>Highlight sentences and add notes</li><li>Tracking pixels that report opens are blocked by default</li></ul></div>
+    <div class="shot-bg reveal"><div class="phone small"><img src="../assets/shot-4-reader.jpg" alt="Lettercast screen: Reader mode" loading="lazy"></div></div>
+  </div>
+  <div class="feature">
+    <div class="text reveal"><span class="tag">Publishers</span><h3 class="serif">Tidy up your subscriptions</h3><p>See how much you get and how much you read from each publisher. Lettercast points out the ones you've stopped reading, and you can unsubscribe right in the app.</p><ul><li>New subscriptions are flagged as new publishers</li><li>Exclude mail that isn't a newsletter</li><li>Supports one-click unsubscribe</li></ul></div>
+    <div class="shot-bg reveal"><div class="phone small"><img src="../assets/shot-5-publishers.jpg" alt="Lettercast screen: Publishers" loading="lazy"></div></div>
+  </div>
+  <div class="feature flip">
+    <div class="text reveal"><span class="tag">Archive</span><h3 class="serif">The lines you loved, kept</h3><p>Highlights, notes, and saved newsletters live in your Archive, so the best sentences from past issues are easy to find again.</p><ul><li>Tap a highlight to jump back to where it was</li><li>Save newsletters you want to reread</li><li>Restore hidden newsletters anytime</li></ul></div>
+    <div class="shot-bg reveal"><div class="phone small"><img src="../assets/shot-6-highlights.jpg" alt="Lettercast screen: Archive" loading="lazy"></div></div>
+  </div>
+</div></section>
+<section><div class="wrap center">
+  <h2 class="big serif reveal">A day with Lettercast</h2>
+  <div class="day"><div class="card reveal"><div class="time">8:10</div><h3>On the subway</h3><p>Tap play on today's edition and put in your earbuds. The newsletters play one after another.</p></div><div class="card reveal"><div class="time">12:40</div><h3>After lunch</h3><p>Skim the rest with Today's Briefing. Three minutes is enough.</p></div><div class="card reveal"><div class="time">21:30</div><h3>Before bed</h3><p>Read one favorite slowly in reader mode, highlighting the lines you like.</p></div></div>
+</div></section>
+<section id="privacy"><div class="wrap">
+  <div class="privacy reveal">
+    <span class="eyebrow">Privacy</span>
+    <h2 class="big serif">Your mail never leaves<br>this iPhone</h2>
+    <p class="sub">Lettercast has no servers. Mail comes from Google straight to your iPhone, and storage, summaries, and speech all happen on device.</p>
+    <div class="grid"><div class="item"><h3>No servers</h3><p>Not even the developer can see your mail. No ads, analytics, or trackers.</p></div><div class="item"><h3>On-device AI</h3><p>Summaries use Apple Intelligence and listening uses iPhone voices. Your mail is never sent to an outside AI.</p></div><div class="item"><h3>Read-only access</h3><p>Gmail is connected read-only. Extra access is requested only if you turn on label organizing, and mail is never deleted or sent.</p></div></div>
+    <p class="legal">Lettercast's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+    <p class="legal"><a href="privacy/">Read the full Privacy Policy →</a></p>
+  </div>
+</div></section>
+<section><div class="wrap center">
+  <h2 class="big serif reveal">Up and running in a minute</h2>
+  <div class="steps"><div class="card reveal"><h3>Connect Gmail</h3><p>Sign in with Google and allow read access to your mail.</p></div><div class="card reveal"><h3>Confirm subscriptions</h3><p>Review the newsletters found in recent mail and check the ones to collect.</p></div><div class="card reveal"><h3>Today's edition</h3><p>From now on, new newsletters arrive as today's edition.</p></div></div>
+</div></section>
+<section class="final"><div class="wrap reveal">
+  <img src="../assets/icon-256.png" alt="Lettercast" width="96" height="96">
+  <h2 class="big serif">Get your first edition tomorrow morning</h2>
+  <p class="sub">Lettercast is getting ready for the App Store.</p>
+  <p class="fine">Requires an iPhone with iOS 18 or later and a Gmail account. Summaries are available on iPhone models that support Apple Intelligence, with iOS 26 or later. Gmail is a trademark of Google LLC. Lettercast is not affiliated with Google. Newsletters shown are fictional examples.</p>
+</div></section></main>
+<footer><div class="wrap">
+<span>© 2026 Lettercast</span>
+<span><a href="../en/privacy/">Privacy Policy</a> · <a href="../en/terms/">Terms of Use</a> · <a href="../en/support/">Support</a></span>
+</div></footer>
+
+<script>
+(function () {
+  var items = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) return;
+  document.documentElement.classList.add('js');
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -8% 0px' });
+  items.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
 </body>
 </html>
