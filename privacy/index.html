@@ -157,7 +157,7 @@ footer a { color: var(--muted); }
 <nav><a class="hide-sm" href="../#features">기능</a><a class="hide-sm" href="../#privacy">개인정보</a><a href="../support/">지원</a><a class="pill" href="../en/privacy/" lang="en">English</a></nav>
 </div></header>
 <main class="doc"><h1 class="serif">개인정보 처리방침</h1>
-<p>시행일: 2026년 11월 1일</p>
+<p>시행일: 2026년 11월 3일</p>
 <p>Lettercast(이하 "앱")는 Gmail로 받은 뉴스레터를 모아 읽고, 듣고, 요약해 보는 iOS 앱입니다. 앱은 <strong>자체 서버가 없으며</strong>, 메일 데이터를 개발자나 제3자에게 전송하거나 저장하지 않습니다. 모든 처리는 사용자의 기기 안에서 이루어집니다.</p>
 <h2>앱이 접근하는 정보</h2>
 <ul>
@@ -179,21 +179,33 @@ footer a { color: var(--muted); }
 <li>뉴스레터 정보, 본문 캐시, 요약, 하이라이트·메모는 <strong>사용자의 기기 안에만</strong> 저장되며 iCloud 백업에서도 제외됩니다.</li>
 <li>뉴스레터가 아닌 메일은 판단에만 쓰고 내용을 저장하지 않습니다. 다시 판단하지 않도록 보낸 사람 주소를 되돌릴 수 없게 변환한 값(해시)만 남깁니다.</li>
 <li>로그인 토큰은 Google 로그인 SDK가 기기의 키체인에 보관합니다.</li>
-<li>로그아웃하면 기기에 저장된 모든 데이터가 삭제됩니다. "연결 해제 및 모든 데이터 삭제"를 누르면 Google 계정에 준 권한도 해제됩니다. 앱을 삭제해도 모든 데이터가 지워집니다.</li>
+<li>로그아웃하면 기기에 저장된 모든 데이터가 삭제됩니다. "연결 해제 및 모든 데이터 삭제"를 누르면 Google 계정에 준 권한도 해제됩니다. 앱을 삭제하면 앱이 저장한 데이터가 지워집니다. 로그인 토큰은 아래 "데이터 보호"를 참고해 주세요.</li>
 </ul>
 <h2>기기 밖으로 나가는 통신</h2>
 <ul>
 <li><strong>Google</strong>: 로그인과 Gmail API 호출. 메일 데이터는 원래 보관자인 Google과만 주고받습니다.</li>
 <li><strong>발행처의 서버</strong>: 메일 속 이미지와 발행처 아이콘을 불러올 때. 설정에서 원격 이미지를 끌 수 있고, 메일 열람을 알리는 추적 픽셀은 기본으로 차단합니다.</li>
 <li><strong>구독 취소</strong>: 사용자가 구독 취소를 확인한 경우에만 메일에 적힌 발행처의 수신 거부 주소로 요청합니다.</li>
+<li><strong>추천 뉴스레터 목록</strong>: 발견 탭을 열 때 Lettercast 웹사이트(lettercast.my)에서 모두에게 같은 목록 파일 하나를 내려받습니다. 사용자 정보·구독 목록·메일 데이터는 보내지 않으며, 웹사이트 호스팅(GitHub Pages)에 일반적인 접속 기록(IP 주소 등)이 남을 수 있습니다. 구독은 발행처의 구독 페이지에서 사용자가 직접 신청하며, Lettercast는 이메일 주소를 발행처에 전달하지 않습니다.</li>
 </ul>
 <p>이 밖에 개발자 서버나 분석·광고 서비스로 보내는 데이터는 없습니다.</p>
+<h2>데이터 보호</h2>
+<ul>
+<li><strong>전송 중 암호화</strong>: 앱의 모든 통신은 HTTPS(TLS)로 암호화되며, 암호화되지 않은 HTTP 연결은 앱이 거부합니다. Gmail API 호출은 기기에서 Google(gmail.googleapis.com)로 직접 가며 Lettercast 서버를 거치지 않습니다.</li>
+<li><strong>저장 시 암호화</strong>: 앱이 저장하는 모든 데이터(뉴스레터 정보, 본문 캐시, 요약, 하이라이트·메모)는 기기 안 앱 전용 공간에만 있고 iOS 데이터 보호(Data Protection)로 암호화됩니다. 메일 데이터베이스와 본문 캐시는 "첫 잠금 해제 전 보호" 등급을 써서, 기기를 다시 켠 뒤 잠금을 풀기 전에는 읽을 수 없습니다. iCloud 백업에서도 제외됩니다.</li>
+<li><strong>로그인 토큰</strong>: Google 로그인 SDK가 OAuth 토큰을 iOS 키체인에 "첫 잠금 해제 후, 이 기기에서만" 등급으로 보관합니다. 앱 파일에는 쓰지 않으며 다른 기기로 옮겨지지 않습니다.</li>
+<li><strong>기기 안에서만 처리</strong>: 요약은 Apple Foundation Models로, 듣기는 iOS 음성 합성(AVSpeechSynthesizer)으로 모두 기기 안에서 처리합니다. 메일 내용을 외부 AI 서비스로 보내지 않으며, 합성한 음성은 실시간으로 재생할 뿐 파일로 저장하지 않습니다. Lettercast는 자체 서버가 없고, 분석·크래시 수집·광고 SDK를 넣지 않았습니다.</li>
+<li><strong>공유·판매 금지</strong>: Google 사용자 데이터를 누구에게도 공유하거나 판매하거나 전송하지 않습니다.</li>
+<li><strong>보관과 삭제</strong>: 데이터는 앱을 쓰는 동안 기기에만 보관됩니다. 본문 캐시는 최대 200MB이며, 가장 오래 읽지 않은 본문부터 자동으로 지웁니다. 로그아웃하거나 설정에서 "연결 해제 및 모든 데이터 삭제"를 누르면 앱이 기기에 저장한 데이터가 모두 삭제되고, 연결 해제는 앱의 접근 권한도 해제합니다. 권한은 <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>에서 언제든 직접 철회할 수 있습니다. 앱을 삭제하면 앱이 저장한 데이터는 지워지지만, iOS 특성상 키체인의 로그인 토큰은 남을 수 있으니 삭제 전에 로그아웃하거나 위 링크에서 권한을 철회해 주세요.</li>
+<li><strong>보안 문제 신고</strong>: 보안 문제를 발견하면 sss989870@gmail.com으로 알려 주세요.</li>
+</ul>
 <h2>Google API 서비스 사용자 데이터 정책 준수</h2>
 <p>Lettercast가 Google API에서 받은 정보를 사용하고 다른 앱으로 전송하는 방식은 제한적 사용(Limited Use) 요구사항을 포함한 <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API 서비스 사용자 데이터 정책</a>을 따릅니다.</p>
 <ul>
 <li>Gmail 데이터는 사용자가 보는 뉴스레터 읽기·듣기·요약 기능을 제공하는 데만 씁니다.</li>
 <li>Gmail 데이터를 사람에게 보여 주거나 전송하지 않습니다. 개발자도 사용자의 메일을 볼 수 없습니다.</li>
-<li>Gmail 데이터를 광고, 재판매, 신용 평가, 범용 AI·머신러닝 모델 학습에 쓰지 않습니다.</li>
+<li>Gmail 데이터를 광고, 재판매, 신용 평가에 쓰지 않습니다.</li>
+<li><strong>AI·머신러닝</strong>: Lettercast는 Google Workspace API로 받은 Google 사용자 데이터(Gmail 데이터 포함)를 일반화된 AI·머신러닝 모델을 개발, 개선, 학습하는 데 쓰지 않습니다. 기기 안 요약은 사용자 본인을 위해서만 만들며 어떤 모델의 학습에도 쓰지 않습니다.</li>
 </ul>
 <h2>Google 로그인</h2>
 <p>로그인은 Google 로그인 SDK로 이루어지며, 이 과정에서 Google이 처리하는 정보에는 <a href="https://policies.google.com/privacy">Google 개인정보처리방침</a>이 적용됩니다.</p>
