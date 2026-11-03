@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Privacy Policy · Lettercast</title>
-<meta name="description" content="Lettercast gathers the newsletters you get in Gmail into one daily edition — read them like a newspaper, listen like a radio show, skim them as summaries. Your mail never leaves your iPhone.">
+<meta name="description" content="Discover newsletters worth reading, subscribe in a tap, then read them like a newspaper, listen like a radio show, and skim them as summaries.">
 <meta property="og:title" content="Privacy Policy · Lettercast">
-<meta property="og:description" content="Lettercast gathers the newsletters you get in Gmail into one daily edition — read them like a newspaper, listen like a radio show, skim them as summaries. Your mail never leaves your iPhone.">
+<meta property="og:description" content="Discover newsletters worth reading, subscribe in a tap, then read them like a newspaper, listen like a radio show, and skim them as summaries.">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#F5F0E6" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#1C1A17" media="(prefers-color-scheme: dark)">
@@ -16,7 +16,7 @@
 <link rel="canonical" href="https://lettercast.my/en/privacy/">
 <link rel="alternate" hreflang="ko" href="https://lettercast.my/privacy/">
 <link rel="alternate" hreflang="en" href="https://lettercast.my/en/privacy/">
-<meta property="og:image" content="https://lettercast.my/assets/shot-1-today.jpg">
+<meta property="og:image" content="https://lettercast.my/assets/shot-2-today.jpg">
 <style>
 :root { color-scheme: light dark;
   --bg:#F5F0E6; --bg2:#EDE5D6; --surface:#FBF8F2; --text:#1F1B16; --muted:#544C43; --line:#E2D9CA;
@@ -158,61 +158,71 @@ footer a { color: var(--muted); }
 </div></header>
 <main class="doc"><h1 class="serif">Privacy Policy</h1>
 <p>Effective: November 3, 2026</p>
-<p>Lettercast ("the app") is an iOS app for reading, listening to, and summarizing the newsletters you receive in Gmail. The app <strong>has no servers of its own</strong> and never sends or stores your mail data with the developer or any third party. All processing happens on your device.</p>
-<h2>Information the app accesses</h2>
+<p>Lettercast ("the app") is an iOS app for reading, listening to, and summarizing newsletters. The app creates a dedicated Lettercast email address for you (for example, `k7m2x9q4ta@lettercast.my`) and shows you the newsletters sent to it. It never asks for your name, email, or phone number, and works without signing in.</p>
+<h2>Information we process</h2>
 <ul>
-<li><strong>Basic Google account info</strong>: the email address and name of the signed-in account, used only to show the connected account in Settings.</li>
-<li><strong>Gmail messages (gmail.readonly)</strong>: message headers (sender, subject, unsubscribe info, etc.) are used to recognize newsletters, and bodies are downloaded only for newsletters from publishers you confirmed.</li>
-<li><strong>Gmail label changes (gmail.modify, optional)</strong>: requested only if you turn on "Organize Gmail labels" in Settings. Used only to label newsletters and archive them from the inbox. The app never deletes or sends mail.</li>
+<li><strong>Your Lettercast address and account identifier</strong>: generated randomly when you first open the app. They contain nothing that identifies you.</li>
+<li><strong>Mail sent to your Lettercast address</strong>: the full message, including sender, subject, and body. These are newsletters you subscribed to with this address or forwarded from another mailbox.</li>
+<li><strong>Device token and public key</strong>: a random token the app uses to connect to our server (the server stores only an irreversible hash) and the public key used to lock your mail.</li>
+<li><strong>Push notification token</strong> (if notifications are on): used only to tell you about new newsletters.</li>
+<li><strong>Connection data</strong>: your IP address may be processed briefly when the app connects. An irreversible hash of it is used for one day to limit abuse.</li>
 </ul>
-<h2>How the information is used</h2>
+<h2>How we use it</h2>
 <ul>
-<li>Finding newsletters and showing them by date and publisher</li>
-<li>Cleaning up bodies in reader mode and reading them aloud with on-device speech synthesis</li>
-<li>Creating summaries with the on-device AI model (Apple Foundation Models)</li>
-<li>Saving highlights, notes, and saved items on your device</li>
-<li>New newsletter alerts (if you turn them on): your iPhone checks for new mail in the background and creates the alert on the device. Alert content never passes through a server.</li>
+<li>To receive, store, and deliver newsletters sent to your Lettercast address</li>
+<li>To show newsletters by date and publisher, tidy them in reader mode, and read them aloud with on-device speech synthesis</li>
+<li>To create summaries with the on-device model (Apple Foundation Models)</li>
+<li>To notify you about new newsletters and show subscription confirmation emails</li>
+<li>To prevent spam and abuse (per-address volume limits, filtering blocked senders)</li>
 </ul>
-<p>It is never used for advertising, analytics, tracking, or training AI models.</p>
-<h2>Storage and retention</h2>
+<p>We do not use any of this for advertising, analytics, tracking, or training AI models. We do not sell or share your mail.</p>
+<h2>How your mail is stored</h2>
 <ul>
-<li>Newsletter info, body cache, summaries, highlights, and notes are stored <strong>only on your device</strong> and are excluded from iCloud backup.</li>
-<li>Mail that isn't a newsletter is used only for detection; its content is not stored. Only an irreversible hash of the sender address is kept so it isn't checked again.</li>
-<li>Sign-in tokens are kept in the device keychain by the Google Sign-In SDK.</li>
-<li>Signing out deletes all data stored on the device. "Disconnect and delete all data" also revokes the access you granted to your Google account. Deleting the app removes the app's stored data; see "How we protect your data" below for the sign-in token.</li>
+<li>When a message arrives, the Lettercast mail server immediately <strong>locks (encrypts) it with a public key created on your iPhone</strong>. The key that unlocks it (the private key) exists only on your iPhone (and in your iCloud Keychain), never on our server. <strong>No one, including the developer, can read the mail stored on the server.</strong></li>
+<li>At the moment of arrival, the server briefly processes the message to lock it and to filter spam. The sender address, sender domain, and message identifier are kept only as irreversible hashes (for blocking and duplicate checks). The message size and arrival time are kept as is.</li>
+<li>Stored mail is kept <strong>until you delete your account</strong>, so you can get it back after reinstalling or on a new iPhone. If you choose "Also delete from server" when deleting a message, it is removed from the server too.</li>
+<li>If no device opens the app for one year, we send a notification and delete the address and all stored mail 30 days later.</li>
+<li>Attachments are stored locked together with the original message but are not opened in the app. Messages larger than 5 MB are not accepted.</li>
 </ul>
-<h2>Network connections</h2>
+<h2>Information stored on your device</h2>
 <ul>
-<li><strong>Google</strong>: sign-in and Gmail API calls. Mail data is exchanged only with Google, which already holds it.</li>
+<li>Your newsletter list, read status, archive, highlights, notes, and summaries are stored in the app's private space on your iPhone and are included in your device's iCloud Backup if you use it (so you can restore them on a new iPhone). The body cache (up to 200 MB) is not backed up.</li>
+<li>Your account information and private key are stored in the iOS Keychain and, if you use iCloud Keychain, synced end-to-end encrypted to devices signed in to your Apple Account.</li>
+<li>Summaries (Apple Foundation Models) and listening (iOS speech synthesis) run entirely on your iPhone. Your mail is never sent anywhere else to be summarized or read aloud.</li>
+</ul>
+<h2>Service providers and international transfers</h2>
+<p>| Recipient | Purpose | Data | Location | |---|---|---|---| | Cloudflare, Inc. | Receiving mail, storing locked mail and account data, communicating with the app | Mail sent to your Lettercast address (locked on arrival), account identifier and address, device token hash, public key, IP address (briefly) | Cloudflare's data centers worldwide, including the United States | | Apple Inc. | Delivering push notifications (if enabled) | Push token, message identifier (no subject or sender) | United States |</p>
+<ul>
+<li>When and how: over the network (TLS-encrypted) when mail arrives and when the app syncs.</li>
+<li>Retention: as described in "How your mail is stored."</li>
+<li>How to opt out: stop using the app, or delete your account at any time in Settings → Delete Account. You will no longer receive newsletters at your Lettercast address.</li>
+</ul>
+<h2>Other network connections</h2>
+<ul>
 <li><strong>Publishers' servers</strong>: when loading images inside a newsletter and publisher icons. You can turn off remote images in Settings, and tracking pixels that report opens are blocked by default.</li>
 <li><strong>Unsubscribe</strong>: only when you confirm, a request is sent to the unsubscribe address listed in the newsletter.</li>
-<li><strong>Recommended newsletters</strong>: when you open the Discover tab, the app downloads one list file, identical for everyone, from the Lettercast website (lettercast.my). No user information, subscriptions or mail data are sent; the website host (GitHub Pages) may keep standard access logs such as IP addresses. You subscribe yourself on the publisher's page; Lettercast does not pass your email address to publishers.</li>
+<li><strong>Recommended newsletters</strong>: when you open the Discover tab, the app downloads one list file, identical for everyone, from the Lettercast website (lettercast.my). No user information, subscriptions, or mail is sent; the website host (GitHub Pages) may keep standard access logs such as IP addresses. You subscribe yourself on the publisher's page; Lettercast never submits your address for you.</li>
 </ul>
-<p>No other data is sent to developer servers or analytics or advertising services.</p>
+<p>The app contains no analytics, crash reporting, or advertising SDKs.</p>
 <h2>How we protect your data</h2>
 <ul>
-<li><strong>Encryption in transit</strong>: every network connection the app makes uses HTTPS (TLS). The app refuses plain-HTTP connections. Gmail API calls go directly from your device to Google (gmail.googleapis.com) and never pass through a Lettercast server.</li>
-<li><strong>Encryption at rest</strong>: everything the app stores (newsletter info, body cache, summaries, highlights, and notes) stays inside the app's sandbox on your device and is encrypted by iOS Data Protection. The mail database and body cache use the "protected until first unlock" class, so they cannot be read while the device is locked after a restart. They are excluded from iCloud backup.</li>
-<li><strong>Sign-in token</strong>: the Google Sign-In SDK stores the OAuth token in the iOS keychain with the "after first unlock, this device only" accessibility class. It is never written to app files and is not moved to other devices.</li>
-<li><strong>On-device processing only</strong>: summaries are created with Apple Foundation Models and listening uses the iOS speech synthesizer (AVSpeechSynthesizer), both on your device. Mail content is not sent to any external AI service, and synthesized audio is played in real time, not saved as files. Lettercast has no servers of its own and includes no analytics, crash-reporting, or advertising SDKs.</li>
-<li><strong>No sharing or selling</strong>: we do not share, sell, or transfer your Google user data to anyone.</li>
-<li><strong>Retention and deletion</strong>: data stays on your device only while you use the app. The body cache is limited to 200 MB, and the least recently read bodies are removed automatically. Signing out, or "Disconnect and delete all data" in Settings, deletes all data the app stored on the device; disconnecting also revokes the app's access. You can also revoke access at any time at <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a>. Deleting the app removes its stored data, but iOS may keep the sign-in token in the keychain, so sign out first or revoke access at the link above.</li>
-<li><strong>Reporting security issues</strong>: please report any security concern to sss989870@gmail.com.</li>
+<li>All connections use HTTPS (TLS); the app refuses unencrypted connections.</li>
+<li>Mail stored on the server can be opened only with your device key, as described above. Server storage is also encrypted at rest (AES-256).</li>
+<li>Data stored on your device is encrypted by iOS Data Protection.</li>
+<li>Server logs never contain mail content (subject, sender, or body).</li>
+<li><strong>Reporting security issues</strong>: please email sss989870@gmail.com.</li>
 </ul>
-<h2>Google API Services User Data Policy</h2>
-<p>Lettercast's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
+<h2>Your rights</h2>
 <ul>
-<li>Gmail data is used only to provide the user-facing features of reading, listening to, and summarizing newsletters.</li>
-<li>No human reads your Gmail data and it is not transferred anywhere. The developer cannot see your mail.</li>
-<li>Gmail data is not used for advertising, resale, or credit evaluation.</li>
-<li><strong>AI/ML</strong>: Lettercast does not use Google user data obtained through Google Workspace APIs, including Gmail data, to develop, improve, or train generalized AI and/or ML models. On-device summaries are generated only for you and are not used to train any model.</li>
+<li><strong>Deletion</strong>: Settings → Delete Account immediately deletes your address, stored mail on the server, and data on the device. Server backups are fully erased within 30 days. Deleted addresses are never issued to anyone else.</li>
+<li><strong>Changing your address</strong>: Settings → Get a New Address. Your old address keeps accepting mail only from senders who already wrote to it, for 30 days.</li>
+<li><strong>Blocking senders</strong>: you can stop receiving mail from senders you don't want.</li>
+<li>For other requests (access, correction, suspension of processing), contact us below. Because accounts have no name or email, we will ask you to confirm ownership in a way that can be verified within the app.</li>
 </ul>
-<h2>Google Sign-In</h2>
-<p>Sign-in uses the Google Sign-In SDK. Information Google processes during sign-in is governed by the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</p>
 <h2>Children</h2>
-<p>The app is not directed to children under 13.</p>
+<p>The app is not directed to children under 14.</p>
 <h2>Changes</h2>
-<p>If this policy changes, we will let you know in the app and on this page.</p>
+<p>We will announce changes to this policy in the app and on this page.</p>
 <h2>Contact</h2>
 <ul>
 <li>Email: sss989870@gmail.com</li>

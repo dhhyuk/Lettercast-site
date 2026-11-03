@@ -1,0 +1,699 @@
+{
+ "version": 1,
+ "updatedAt": "2026-11-03",
+ "categories": [
+  {
+   "id": "news",
+   "name": {
+    "ko": "시사",
+    "en": "News"
+   }
+  },
+  {
+   "id": "economy",
+   "name": {
+    "ko": "경제·재테크",
+    "en": "Economy"
+   }
+  },
+  {
+   "id": "tech",
+   "name": {
+    "ko": "IT·테크",
+    "en": "Tech"
+   }
+  },
+  {
+   "id": "design",
+   "name": {
+    "ko": "디자인·브랜드",
+    "en": "Design & Brand"
+   }
+  },
+  {
+   "id": "marketing",
+   "name": {
+    "ko": "마케팅·트렌드",
+    "en": "Marketing & Trends"
+   }
+  },
+  {
+   "id": "work",
+   "name": {
+    "ko": "일·커리어",
+    "en": "Work & Career"
+   }
+  },
+  {
+   "id": "culture",
+   "name": {
+    "ko": "책·문화",
+    "en": "Books & Culture"
+   }
+  },
+  {
+   "id": "life",
+   "name": {
+    "ko": "라이프",
+    "en": "Life"
+   }
+  },
+  {
+   "id": "english",
+   "name": {
+    "ko": "영어 뉴스레터",
+    "en": "In English"
+   }
+  }
+ ],
+ "newsletters": [
+  {
+   "id": "newneek",
+   "name": "뉴닉",
+   "categories": [
+    "news"
+   ],
+   "description": {
+    "ko": "어제 무슨 일이 있었는지 친구에게 듣듯 편하게 정리해 줘요. 시사가 낯선 사람도 부담 없이 시작하기 좋아요."
+   },
+   "frequency": {
+    "ko": "평일 아침"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://newneek.co/subscribe",
+   "senders": [
+    "newneek.co"
+   ]
+  },
+  {
+   "id": "mabunews",
+   "name": "마부뉴스",
+   "categories": [
+    "news",
+    "tech"
+   ],
+   "description": {
+    "ko": "SBS 데이터저널리즘팀이 사회 이슈와 AI·기술 흐름을 숫자와 근거로 풀어요. 그래프 하나로 이해되는 순간이 많아요."
+   },
+   "frequency": {
+    "ko": "매주 금요일"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://mabunews.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "2daero",
+   "name": "이대로",
+   "categories": [
+    "news"
+   ],
+   "description": {
+    "ko": "20대의 눈으로 한 주의 정치 이슈를 골라 쉽게 설명해요. 정치가 어렵게 느껴질 때 첫 단추로 좋아요."
+   },
+   "frequency": {
+    "ko": "매주 월요일 낮"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://2daero.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "celub",
+   "name": "셀럽",
+   "categories": [
+    "news"
+   ],
+   "description": {
+    "ko": "국회 보좌진이 국회 안에서 본 정치 이야기를 전해요. 뉴스 뒤편의 입법 과정이 궁금한 사람에게 맞아요."
+   },
+   "frequency": {
+    "ko": "매주 월요일"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://page.stibee.com/subscriptions/239418",
+   "senders": []
+  },
+  {
+   "id": "uppity",
+   "name": "어피티 머니레터",
+   "categories": [
+    "economy"
+   ],
+   "description": {
+    "ko": "2030 직장인 눈높이로 그날 꼭 알아야 할 경제 뉴스를 짧게 풀어 줘요. 출근길 5분 경제 공부용이에요."
+   },
+   "frequency": {
+    "ko": "평일 아침"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://uppity.co.kr/subscription/",
+   "senders": [
+    "uppity.co.kr"
+   ]
+  },
+  {
+   "id": "dailybyte",
+   "name": "데일리바이트",
+   "categories": [
+    "economy"
+   ],
+   "description": {
+    "ko": "세계 경제와 비즈니스 뉴스를 배경부터 전망까지 한 번에 정리해요. 여러 경제 뉴스레터를 하나로 줄이고 싶을 때 좋아요."
+   },
+   "frequency": {
+    "ko": "매일 아침"
+   },
+   "language": "ko",
+   "price": "freemium",
+   "subscribeURL": "https://www.mydailybyte.com/about/newsletter",
+   "senders": [
+    "mydailybyte.com"
+   ]
+  },
+  {
+   "id": "taeng2money",
+   "name": "탱이머니 쉬운경제레터",
+   "categories": [
+    "economy"
+   ],
+   "description": {
+    "ko": "어려운 경제 뉴스를 쉬운 말로 바꾸고, 저축·투자·연금처럼 바로 해 볼 수 있는 이야기를 곁들여요."
+   },
+   "frequency": {
+    "ko": "주 2회"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://maily.so/taeng2money",
+   "senders": []
+  },
+  {
+   "id": "geeknews",
+   "name": "긱뉴스 위클리",
+   "categories": [
+    "tech"
+   ],
+   "description": {
+    "ko": "개발자들이 추천한 기술·스타트업 소식 중 한 주 동안 반응이 컸던 글을 모아 보내요. 짧은 한국어 요약이 함께 와요."
+   },
+   "frequency": {
+    "ko": "매주"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://news.hada.io/blog/subscribe_geeknews",
+   "senders": [
+    "hada.io"
+   ]
+  },
+  {
+   "id": "yozmit",
+   "name": "요즘IT",
+   "categories": [
+    "tech",
+    "work"
+   ],
+   "description": {
+    "ko": "기획·디자인·개발 실무자가 쓴 글을 골라 보내요. 위시켓 회원가입 후 받아 볼 수 있어요."
+   },
+   "frequency": {
+    "ko": "매주 목요일"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://yozm.wishket.com/magazine/newsletter/",
+   "senders": [
+    "wishket.com"
+   ]
+  },
+  {
+   "id": "itletter",
+   "name": "IT 잇생레터",
+   "categories": [
+    "tech"
+   ],
+   "description": {
+    "ko": "새로 나온 IT 서비스와 기술 소식을 생활과 연결해 가볍게 소개해요. 개발자가 아니어도 읽기 쉬워요."
+   },
+   "frequency": {
+    "ko": "정기 발행"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://itletter.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "designcompass",
+   "name": "디자인 나침반 레터",
+   "categories": [
+    "design"
+   ],
+   "description": {
+    "ko": "UX·UI·브랜드 디자인 업계 소식과 눈여겨볼 사례를 모아 와요. 심층 콘텐츠는 유료 멤버십이에요."
+   },
+   "frequency": {
+    "ko": "평일 아침"
+   },
+   "language": "ko",
+   "price": "freemium",
+   "subscribeURL": "https://maily.so/designcompass",
+   "senders": [
+    "designcompass.org"
+   ]
+  },
+  {
+   "id": "popoletter",
+   "name": "포포레터",
+   "categories": [
+    "design",
+    "life"
+   ],
+   "description": {
+    "ko": "문구 브랜드 포인트오브뷰가 매달 하나의 키워드로 창작의 장면과 도구 이야기를 들려줘요."
+   },
+   "frequency": {
+    "ko": "매월 18일"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://popoletter.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "dolletter",
+   "name": "돌멩이레터",
+   "categories": [
+    "design",
+    "marketing"
+   ],
+   "description": {
+    "ko": "나라와 분야를 가리지 않고 한 브랜드를 골라 그 배경과 철학을 깊게 소개해요."
+   },
+   "frequency": {
+    "ko": "격주 목요일"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://dolletter.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "markethinking",
+   "name": "마케띵킹",
+   "categories": [
+    "marketing"
+   ],
+   "description": {
+    "ko": "오픈애즈가 잘 알려진 브랜드의 마케팅 사례를 뜯어보며 생각할 거리를 던져요."
+   },
+   "frequency": {
+    "ko": "정기 발행"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://markethinking.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "careet",
+   "name": "캐릿",
+   "categories": [
+    "marketing"
+   ],
+   "description": {
+    "ko": "대학내일이 Z세대·알파세대 사이에서 뜨는 트렌드를 골라 분석해요. 기획·마케팅 아이디어를 얻기 좋아요."
+   },
+   "frequency": {
+    "ko": "매주 화요일 아침"
+   },
+   "language": "ko",
+   "price": "freemium",
+   "subscribeURL": "https://www.careet.net",
+   "senders": [
+    "careet.net"
+   ]
+  },
+  {
+   "id": "dropshot",
+   "name": "드롭샷레터",
+   "categories": [
+    "marketing"
+   ],
+   "description": {
+    "ko": "눈에 띄는 광고 영상과 영상 트렌드를 정리해요. 영상 기획을 고민하는 마케터에게 레퍼런스 창고예요."
+   },
+   "frequency": {
+    "ko": "매주 화요일"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://dropshotletter.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "windly",
+   "name": "윈들리레터",
+   "categories": [
+    "marketing",
+    "economy"
+   ],
+   "description": {
+    "ko": "온라인 쇼핑몰 판매자 관점에서 소비 트렌드와 커머스 이슈를 해석해요."
+   },
+   "frequency": {
+    "ko": "매주 화요일"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://page.stibee.com/subscriptions/155399",
+   "senders": []
+  },
+  {
+   "id": "personalmakers",
+   "name": "커밍쏜의 퍼스널메이커스",
+   "categories": [
+    "work"
+   ],
+   "description": {
+    "ko": "1인 브랜드와 유튜브 채널을 꾸준히 키우는 방법을 긴 호흡으로 풀어요."
+   },
+   "frequency": {
+    "ko": "매월"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://personalmakers.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "anasdino",
+   "name": "아나의디노",
+   "categories": [
+    "work"
+   ],
+   "description": {
+    "ko": "온라인에 나만의 사업을 만드는 과정을 실패담까지 솔직하게 나눠요."
+   },
+   "frequency": {
+    "ko": "매주 화·토요일"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://anasdino.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "hamdok",
+   "name": "함께하는 독학클럽",
+   "categories": [
+    "work",
+    "life"
+   ],
+   "description": {
+    "ko": "회사 밖에서 혼자 일하며 부딪히는 고민과 나에게 맞게 성장하는 법을 이야기해요."
+   },
+   "frequency": {
+    "ko": "매주 수요일"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://hamdok.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "allculture",
+   "name": "세상의 모든 문화",
+   "categories": [
+    "culture"
+   ],
+   "description": {
+    "ko": "스무 명이 넘는 작가가 돌아가며 책·영화·음악·전시 이야기를 보내요. 구독료는 원하는 만큼 내는 방식이에요."
+   },
+   "frequency": {
+    "ko": "평일"
+   },
+   "language": "ko",
+   "price": "freemium",
+   "subscribeURL": "https://allculture.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "turtleneck",
+   "name": "거북목편지",
+   "categories": [
+    "culture"
+   ],
+   "description": {
+    "ko": "1인 출판사 거북목출판사가 책 만드는 일상과 책 이야기를 편지처럼 보내요."
+   },
+   "frequency": {
+    "ko": "매주 목요일"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://turtleneckpress.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "epicure",
+   "name": "에피큐어",
+   "categories": [
+    "culture",
+    "life"
+   ],
+   "description": {
+    "ko": "식재료 하나를 깊게 파고들어 맛의 본질을 탐구해요. 음식 이야기를 좋아하는 사람에게 맞아요."
+   },
+   "frequency": {
+    "ko": "매월"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://theepicure.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "1hows",
+   "name": "1집구석",
+   "categories": [
+    "life"
+   ],
+   "description": {
+    "ko": "세계 곳곳 취향이 뚜렷한 1인 가구를 인터뷰해 다양한 혼자 사는 방식을 보여 줘요."
+   },
+   "frequency": {
+    "ko": "매주 화요일"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://1hows.com/newsletter",
+   "senders": [
+    "1hows.com"
+   ]
+  },
+  {
+   "id": "5kkae",
+   "name": "오깨들",
+   "categories": [
+    "life"
+   ],
+   "description": {
+    "ko": "하루에 하나, 작게 깨달은 것을 짧은 글로 보내요. 자기 전에 읽기 좋은 분량이에요."
+   },
+   "frequency": {
+    "ko": "월·수·금 밤 11시"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://5kkae.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "oddflat",
+   "name": "오드플랫",
+   "categories": [
+    "life",
+    "design"
+   ],
+   "description": {
+    "ko": "빈티지 가구 브랜드가 가구와 함께 사는 사람들의 집을 찾아가 생활을 기록해요."
+   },
+   "frequency": {
+    "ko": "비정기"
+   },
+   "language": "ko",
+   "price": "free",
+   "subscribeURL": "https://oddflat.stibee.com/subscribe",
+   "senders": []
+  },
+  {
+   "id": "tldr",
+   "name": "TLDR",
+   "categories": [
+    "english",
+    "tech"
+   ],
+   "description": {
+    "ko": "기술·스타트업·프로그래밍 소식을 한 줄 요약으로 모아 와요. 5분이면 그날 테크 뉴스를 훑을 수 있어요."
+   },
+   "frequency": {
+    "ko": "평일"
+   },
+   "language": "en",
+   "price": "free",
+   "subscribeURL": "https://tldr.tech",
+   "senders": [
+    "tldrnewsletter.com"
+   ]
+  },
+  {
+   "id": "morningbrew",
+   "name": "Morning Brew",
+   "categories": [
+    "english",
+    "economy"
+   ],
+   "description": {
+    "ko": "미국 비즈니스·경제 뉴스를 가볍고 재치 있는 문장으로 전해요. 영어 경제 기사 읽기 연습으로도 좋아요."
+   },
+   "frequency": {
+    "ko": "평일 아침"
+   },
+   "language": "en",
+   "price": "free",
+   "subscribeURL": "https://www.morningbrew.com/daily/subscribe",
+   "senders": [
+    "morningbrew.com"
+   ]
+  },
+  {
+   "id": "hustle",
+   "name": "The Hustle",
+   "categories": [
+    "english",
+    "economy"
+   ],
+   "description": {
+    "ko": "비즈니스와 테크 뒤에 숨은 흥미로운 이야기를 골라 소개해요."
+   },
+   "frequency": {
+    "ko": "평일"
+   },
+   "language": "en",
+   "price": "free",
+   "subscribeURL": "https://thehustle.co",
+   "senders": [
+    "thehustle.co"
+   ]
+  },
+  {
+   "id": "1440",
+   "name": "1440",
+   "categories": [
+    "english",
+    "news"
+   ],
+   "description": {
+    "ko": "정치색을 덜어 낸 세계 뉴스를 짧게 정리해요. 하루 5분으로 세계 소식을 따라가기 좋아요."
+   },
+   "frequency": {
+    "ko": "매일"
+   },
+   "language": "en",
+   "price": "free",
+   "subscribeURL": "https://join1440.com",
+   "senders": [
+    "join1440.com"
+   ]
+  },
+  {
+   "id": "lenny",
+   "name": "Lenny's Newsletter",
+   "categories": [
+    "english",
+    "work"
+   ],
+   "description": {
+    "ko": "프로덕트·성장·커리어에 대해 실리콘밸리 실무자들의 경험을 깊게 다뤄요. 일부 글은 유료예요."
+   },
+   "frequency": {
+    "ko": "주 1회 이상"
+   },
+   "language": "en",
+   "price": "freemium",
+   "subscribeURL": "https://www.lennysnewsletter.com/subscribe",
+   "senders": [
+    "lennysnewsletter@substack.com",
+    "lennysnewsletter.com"
+   ]
+  },
+  {
+   "id": "pragmatic",
+   "name": "The Pragmatic Engineer",
+   "categories": [
+    "english",
+    "tech"
+   ],
+   "description": {
+    "ko": "빅테크와 스타트업 엔지니어링 조직이 실제로 어떻게 일하는지 취재해요. 심층 글은 유료예요."
+   },
+   "frequency": {
+    "ko": "주 1회 이상"
+   },
+   "language": "en",
+   "price": "freemium",
+   "subscribeURL": "https://newsletter.pragmaticengineer.com/subscribe",
+   "senders": [
+    "pragmaticengineer@substack.com",
+    "pragmaticengineer.com"
+   ]
+  },
+  {
+   "id": "benevans",
+   "name": "Benedict Evans",
+   "categories": [
+    "english",
+    "tech"
+   ],
+   "description": {
+    "ko": "한 주의 테크 뉴스 중 중요한 것을 고르고 왜 중요한지 짧게 해설해요. 일부는 유료예요."
+   },
+   "frequency": {
+    "ko": "매주"
+   },
+   "language": "en",
+   "price": "freemium",
+   "subscribeURL": "https://www.ben-evans.com/newsletter",
+   "senders": [
+    "ben-evans.com"
+   ]
+  },
+  {
+   "id": "hackernewsletter",
+   "name": "Hacker Newsletter",
+   "categories": [
+    "english",
+    "tech"
+   ],
+   "description": {
+    "ko": "해커뉴스에서 한 주 동안 화제였던 글을 분야별로 골라 보내요."
+   },
+   "frequency": {
+    "ko": "매주 금요일"
+   },
+   "language": "en",
+   "price": "free",
+   "subscribeURL": "https://www.hackernewsletter.com",
+   "senders": [
+    "hackernewsletter.com"
+   ]
+  }
+ ]
+}
