@@ -164,6 +164,7 @@ footer a { color: var(--muted); }
 <li><strong>Your Lettercast address and account identifier</strong>: generated randomly when you first open the app. They contain nothing that identifies you.</li>
 <li><strong>Mail sent to your Lettercast address</strong>: the full message, including sender, subject, and body. These are newsletters you subscribed to with this address or forwarded from another mailbox.</li>
 <li><strong>Device token and public key</strong>: a random token the app uses to connect to our server (the server stores only an irreversible hash) and the public key used to lock your mail.</li>
+<li><strong>Newsletters you subscribe to</strong>: when mail from a new sender arrives, the app asks "Is this a newsletter you subscribed to?" Only for senders you confirm, or newsletters you subscribe to from the Discover tab, we store the sender's name, email address, and mailing-list identifier (List-Id) with your account. No mail content is included. Senders you decline are not stored.</li>
 <li><strong>Push notification token</strong> (if notifications are on): used only to tell you about new newsletters.</li>
 <li><strong>Connection data</strong>: your IP address may be processed briefly when the app connects. An irreversible hash of it is used for one day to limit abuse.</li>
 </ul>
@@ -174,6 +175,7 @@ footer a { color: var(--muted); }
 <li>To create summaries with the on-device model (Apple Foundation Models)</li>
 <li>To notify you about new newsletters and show subscription confirmation emails</li>
 <li>To prevent spam and abuse (per-address volume limits, filtering blocked senders)</li>
+<li>To recommend newsletters you may like, based on the newsletters you subscribe to</li>
 </ul>
 <p>We do not use any of this for advertising, analytics, tracking, or training AI models. We do not sell or share your mail.</p>
 <h2>How your mail is stored</h2>
@@ -181,6 +183,7 @@ footer a { color: var(--muted); }
 <li>When a message arrives, the Lettercast mail server immediately <strong>locks (encrypts) it with a public key created on your iPhone</strong>. The key that unlocks it (the private key) exists only on your iPhone (and in your iCloud Keychain), never on our server. <strong>No one, including the developer, can read the mail stored on the server.</strong></li>
 <li>At the moment of arrival, the server briefly processes the message to lock it and to filter spam. The sender address, sender domain, and message identifier are kept only as irreversible hashes (for blocking and duplicate checks). The message size and arrival time are kept as is.</li>
 <li>Stored mail is kept <strong>until you delete your account</strong>, so you can get it back after reinstalling or on a new iPhone. If you choose "Also delete from server" when deleting a message, it is removed from the server too.</li>
+<li>Newsletter subscription records are deleted when you delete your account, mark that sender as not a newsletter, or unsubscribe.</li>
 <li>If no device opens the app for one year, we send a notification and delete the address and all stored mail 30 days later.</li>
 <li>Attachments are stored locked together with the original message but are not opened in the app. Messages larger than 5 MB are not accepted.</li>
 </ul>
@@ -191,7 +194,7 @@ footer a { color: var(--muted); }
 <li>Summaries (Apple Foundation Models) and listening (iOS speech synthesis) run entirely on your iPhone. Your mail is never sent anywhere else to be summarized or read aloud.</li>
 </ul>
 <h2>Service providers and international transfers</h2>
-<p>| Recipient | Purpose | Data | Location | |---|---|---|---| | Cloudflare, Inc. | Receiving mail, storing locked mail and account data, communicating with the app | Mail sent to your Lettercast address (locked on arrival), account identifier and address, device token hash, public key, IP address (briefly) | Cloudflare's data centers worldwide, including the United States | | Apple Inc. | Delivering push notifications (if enabled) | Push token, message identifier (no subject or sender) | United States |</p>
+<p>| Recipient | Purpose | Data | Location | |---|---|---|---| | Cloudflare, Inc. | Receiving mail, storing locked mail and account data, communicating with the app | Mail sent to your Lettercast address (locked on arrival), account identifier and address, newsletters you subscribe to (sender name and email address), device token hash, public key, IP address (briefly) | Cloudflare's data centers worldwide, including the United States | | Apple Inc. | Delivering push notifications (if enabled) | Push token, message identifier (no subject or sender) | United States |</p>
 <ul>
 <li>When and how: over the network (TLS-encrypted) when mail arrives and when the app syncs.</li>
 <li>Retention: as described in "How your mail is stored."</li>
